@@ -1,0 +1,48 @@
+2024-02-27 09:10:05,747 : INFO : Start of Prediction
+2024-02-27 09:10:05,766 : INFO : run_id:2024-02-27_091005_425837906
+2024-02-27 09:10:05,767 : INFO : Start of Preprocessing...
+2024-02-27 09:10:05,767 : INFO : Start of feature encoding...
+2024-02-27 09:10:05,782 : INFO : End of feature encoding...
+2024-02-27 09:10:05,787 : INFO : Start of Droping Columns...
+2024-02-27 09:10:05,806 : INFO : End of Droping Columns...
+2024-02-27 09:10:05,807 : INFO : Start of finding missing values...
+2024-02-27 09:10:05,809 : INFO : End of finding missing values...
+2024-02-27 09:10:05,809 : INFO : Start of building final predictset...
+2024-02-27 09:10:05,810 : ERROR : Exception raised while building final predictset: [Errno 2] No such file or directory: 'apps/database/columns.json'
+Traceback (most recent call last):
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/preprocess/preprocessor.py", line 206, in final_predictset
+    with open('apps/database/columns.json', 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'apps/database/columns.json'
+2024-02-27 09:10:05,812 : ERROR : Unsuccessful End of Preprocessing...
+Traceback (most recent call last):
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/preprocess/preprocessor.py", line 325, in preprocess_predict
+    data = self.final_predictset(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/preprocess/preprocessor.py", line 222, in final_predictset
+    raise e
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/preprocess/preprocessor.py", line 206, in final_predictset
+    with open('apps/database/columns.json', 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'apps/database/columns.json'
+2024-02-27 09:10:05,813 : ERROR : Unsuccessful End of Prediction
+Traceback (most recent call last):
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/preprocess/preprocessor.py", line 325, in preprocess_predict
+    data = self.final_predictset(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/preprocess/preprocessor.py", line 222, in final_predictset
+    raise e
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/preprocess/preprocessor.py", line 206, in final_predictset
+    with open('apps/database/columns.json', 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'apps/database/columns.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/prediction/predict_model.py", line 98, in single_predict_from_model
+    self.X = self.preProcess.preprocess_predict(data)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/preprocess/preprocessor.py", line 330, in preprocess_predict
+    raise Exception
+Exception

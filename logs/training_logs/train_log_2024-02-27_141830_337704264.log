@@ -1,0 +1,32 @@
+2024-02-27 14:18:30,221 : INFO : Start of Training
+2024-02-27 14:18:30,222 : INFO : Run_id:2024-02-27_141830_337704264
+2024-02-27 14:18:30,222 : INFO : Start of Data Load, validation and transformation
+2024-02-27 14:18:30,222 : INFO : Start of Archiving Old Rejected Files...
+2024-02-27 14:18:30,224 : INFO : End of Archiving Old Rejected Files...
+2024-02-27 14:18:30,224 : INFO : Start of Archiving Old Validated Files...
+2024-02-27 14:18:30,224 : INFO : End of Archiving Old Validated Files...
+2024-02-27 14:18:30,225 : INFO : Start of Archiving Old Processed Files...
+2024-02-27 14:18:30,225 : INFO : End of Archiving Old Processed Files...
+2024-02-27 14:18:30,225 : INFO : Start of Archiving Old Result Files...
+2024-02-27 14:18:30,225 : INFO : End of Archiving Old Result Files...
+2024-02-27 14:18:30,225 : ERROR : Unsuccessful End of Data Load, validation and transformation
+Traceback (most recent call last):
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/ingestion/load_validate.py", line 296, in validate_trainset
+    column_names, number_of_columns = self.values_from_schema('schema_train')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LoadValidate' object has no attribute 'values_from_schema'. Did you mean: 'value_from_schema'?
+2024-02-27 14:18:30,229 : ERROR : Unsuccessful End of Training
+Traceback (most recent call last):
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/ingestion/load_validate.py", line 296, in validate_trainset
+    column_names, number_of_columns = self.values_from_schema('schema_train')
+                                      ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'LoadValidate' object has no attribute 'values_from_schema'. Did you mean: 'value_from_schema'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/training/train_model.py", line 59, in training_model
+    self.loadValidate.validate_trainset()
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/ingestion/load_validate.py", line 314, in validate_trainset
+    raise Exception
+Exception

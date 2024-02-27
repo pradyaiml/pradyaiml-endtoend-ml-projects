@@ -1,0 +1,35 @@
+2024-02-27 11:26:48,487 : INFO : Start of Prediction
+2024-02-27 11:26:48,487 : INFO : run_id:2024-02-27_112648_385839520
+2024-02-27 11:26:48,487 : INFO : Start of Preprocessing...
+2024-02-27 11:26:48,487 : INFO : Start of feature encoding...
+2024-02-27 11:26:48,490 : INFO : End of feature encoding...
+2024-02-27 11:26:48,491 : INFO : Start of Droping Columns...
+2024-02-27 11:26:48,492 : INFO : End of Droping Columns...
+2024-02-27 11:26:48,492 : INFO : Start of finding missing values...
+2024-02-27 11:26:48,492 : INFO : End of finding missing values...
+2024-02-27 11:26:48,492 : INFO : Start of building final predictset...
+2024-02-27 11:26:48,498 : INFO : End of building final predictset...
+2024-02-27 11:26:48,498 : INFO : End of Preprocessing...
+2024-02-27 11:26:48,498 : INFO : Start of Load Model
+2024-02-27 11:26:48,498 : ERROR : Exception raised while Loading Model: [Errno 2] No such file or directory: 'apps/models/KMeans/KMeans.sav'
+Traceback (most recent call last):
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/core/file_operation.py", line 84, in load_model
+    with open('apps/models/' + file_name + '/' + file_name + '.sav', 'rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'apps/models/KMeans/KMeans.sav'
+2024-02-27 11:26:48,500 : ERROR : Unsuccessful End of Prediction
+Traceback (most recent call last):
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/core/file_operation.py", line 84, in load_model
+    with open('apps/models/' + file_name + '/' + file_name + '.sav', 'rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'apps/models/KMeans/KMeans.sav'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/prediction/predict_model.py", line 100, in single_predict_from_model
+    kmeans = self.fileOperation.load_model('KMeans')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/bcb/Documents/07-working-files/12-ml-endtoend-1/apps/core/file_operation.py", line 90, in load_model
+    raise Exception()
+Exception
